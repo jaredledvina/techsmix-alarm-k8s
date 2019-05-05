@@ -8,7 +8,10 @@ arch=('aarch64')
 url="https://kubernetes.io/"
 license=('Apache')
 groups=()
-depends=()
+depends=('kubelet>=1.8.0'
+         'kubectl>=1.8.0'
+	 'cni-plugins>=0.7.5'
+	 'cri-tools>=1.11.0')
 makedepends=()
 checkdepends=()
 optdepends=()
@@ -28,4 +31,7 @@ validpgpkeys=()
 
 package() {
 	install -Dm755 $srcdir/kubernetes/node/bin/kubeadm $pkgdir/bin/kubeadm
+	install -Dm644 /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+	install -Dm644 /usr/lib/modules-load.d/kubeadm.conf
+	install -Dm644 /etc/sysctl.d/50-kubeadm.conf
 }

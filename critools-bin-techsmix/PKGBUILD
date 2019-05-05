@@ -1,0 +1,31 @@
+# Maintainer: Jared Ledvina <jared@techsmix.net>
+pkgname=critools-techsmix-bin
+pkgver=1.14.0
+pkgrel=1
+epoch=
+pkgdesc="Container Runtime Interface tools (crictl)"
+arch=('aarch64')
+url="https://kubernetes.io/"
+license=('Apache')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=()
+source_aarch64=("https://github.com/kubernetes-sigs/cri-tools/releases/download/v$pkgver/crictl-v$pkgver-linux-arm64.tar.gz")
+noextract=()
+md5sums=()
+sha256sums_aarch64=('f76b3d00a272c8d210e9a45f77d07d3770bee310d99c4fd9a72d6f55278882e5')
+validpgpkeys=()
+
+package() {
+	install -Dm755 $srcdir/crictl $pkgdir/bin/crictl
+}
