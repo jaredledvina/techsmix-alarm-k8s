@@ -1,0 +1,31 @@
+# Maintainer: Jared Ledvina <jared@techsmix.net>
+pkgname=kubeadm-techsmix-bin
+pkgver=1.14.1
+pkgrel=1
+epoch=
+pkgdesc="Kubernetes Cluster Bootstrapping Tool - The Kubernetes command line tool for bootstrapping a Kubernetes cluster."
+arch=('aarch64')
+url="https://kubernetes.io/"
+license=('Apache')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=()
+source_aarch64=("https://dl.k8s.io/v$pkgver/kubernetes-node-linux-arm64.tar.gz")
+noextract=()
+md5sums=()
+sha512sums_aarch64=('dd2544dd9543cb9a556def0116fdccb8b14c0e7ae07debbf10f3b4ac0669a1f38be28327114781157cc9ae06e96140b1a0650eeb707bd883ae3509e0ee873da7')
+validpgpkeys=()
+
+package() {
+	install -Dm755 $srcdir/kubernetes/node/bin/kubeadm $pkgdir/bin/kubeadm
+}
