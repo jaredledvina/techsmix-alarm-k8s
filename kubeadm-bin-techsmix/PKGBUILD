@@ -2,7 +2,6 @@
 pkgname=kubeadm-techsmix-bin
 pkgver=1.14.1
 pkgrel=1
-epoch=
 pkgdesc="Kubernetes Cluster Bootstrapping Tool - The Kubernetes command line tool for bootstrapping a Kubernetes cluster."
 arch=('aarch64')
 url="https://kubernetes.io/"
@@ -12,23 +11,11 @@ depends=('kubelet-techsmix-bin>=1.8.0'
          'kubectl-techsmix-bin>=1.8.0'
 	 'cni-plugins>=0.7.5'
 	 'critools-techsmix-bin>=1.11.0')
-makedepends=()
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
+provides=("kubeadm=$pkgver")
 source=("https://dl.k8s.io/v$pkgver/kubernetes-src.tar.gz")
 source_aarch64=("https://dl.k8s.io/v$pkgver/kubernetes-node-linux-arm64.tar.gz")
-noextract=()
-md5sums=()
 sha512sums=('ef1b4ed78ed92124fbec2b2bf54ba3b293038f9c8f1df3883071ae9430450cab9c02c6111cf171ad8d61a0aef6d236fbb9f0f1526e6c00f0452323e8c7c16305')
 sha512sums_aarch64=('dd2544dd9543cb9a556def0116fdccb8b14c0e7ae07debbf10f3b4ac0669a1f38be28327114781157cc9ae06e96140b1a0650eeb707bd883ae3509e0ee873da7')
-validpgpkeys=()
 
 package() {
 	install -Dm755 $srcdir/kubernetes/node/bin/kubeadm $pkgdir/bin/kubeadm
