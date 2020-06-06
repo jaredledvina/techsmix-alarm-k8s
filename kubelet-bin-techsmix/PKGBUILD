@@ -1,6 +1,6 @@
 # Maintainer: Jared Ledvina <jared@techsmix.net>
 pkgname=kubelet-techsmix-bin
-pkgver=1.14.1
+pkgver=1.18.3
 pkgrel=1
 pkgdesc="The Kubernetes Node Agent - The node agent of Kubernetes, the container cluster manager"
 arch=('aarch64')
@@ -18,8 +18,8 @@ depends=('conntrack-tools'
 provides=("kubelet=$pkgver")
 source=("https://dl.k8s.io/v$pkgver/kubernetes-src.tar.gz")
 source_aarch64=("https://dl.k8s.io/v$pkgver/kubernetes-node-linux-arm64.tar.gz")
-sha512sums=('ef1b4ed78ed92124fbec2b2bf54ba3b293038f9c8f1df3883071ae9430450cab9c02c6111cf171ad8d61a0aef6d236fbb9f0f1526e6c00f0452323e8c7c16305')
-sha512sums_aarch64=('dd2544dd9543cb9a556def0116fdccb8b14c0e7ae07debbf10f3b4ac0669a1f38be28327114781157cc9ae06e96140b1a0650eeb707bd883ae3509e0ee873da7')
+sha512sums=('93b83acf5d15cab94e1d2866b2613d1aeed67c00a9eed064988c3bc4c700e34bd854fffac730c5ed6d8e138f15ce7750c17952f33bd4918771c7da358fbf5b53')
+sha512sums_aarch64=('d0b0a8ac1f448df7c3bb2254000e0ca8567fafe1fd4e680c75a6c8d40dcc9d4b9ae34648532aef50a953be99d41d62464d704b516c33745fc169337684e7433b')
 
 package() {
 	install -Dm755 $srcdir/kubernetes/node/bin/kubelet $pkgdir/bin/kubelet
